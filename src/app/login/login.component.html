@@ -1,1 +1,35 @@
-<p>login works!</p>
+<form [formGroup]="myForm" novalidate (ngSubmit)="login()">
+    <div class="form-group">
+        <label for="userName">User name</label>
+        <input type="text" class="form-control" ([ngModel])="userName" name="userName" formControlName="userName" id="userName"/>
+        <div class="alert alert-danger"
+            *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+            Incorrect user name
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" formControlName="password" id="password"/>
+        <div class="alert alert-danger"
+            *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
+            Incorrect password
+        </div>
+    </div>
+  
+  
+    <div class="form-group">
+        <button class="btn btn-login" [disabled]="myForm.invalid" (click)="login()">
+            Log in
+        </button>
+    </div>
+</form>
+<!-- 
+<form action="">
+
+    <label for="userName">User name</label>
+    <input type="text" class="form-input"  ([ngModel])="userName" autocomplete="off"  name="userName" id="userName" />
+    <label for="password">Password</label>
+    <input type="text" class="form-input" name="password" id="password" />
+    <button  [disabled]="loginFlag">Log in</button>
+</form> -->

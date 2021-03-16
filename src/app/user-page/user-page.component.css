@@ -1,0 +1,35 @@
+.page {
+    margin-top: 10px;
+    margin: 0 auto;
+    display: grid;
+    max-width: 70vw;
+}
+
+.logout {
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    border-width: 0px;
+    background-color: rgb(144, 140, 140);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.container {
+    height: 700px;
+    margin-top: 5px;
+    border: 2px solid rgb(182, 179, 179);
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.user-info {
+    max-width: 50%;
+    border-right: 2px solid rgb(182, 179, 179);
+}
+.user{
+    position: sticky;
+    top: 0;
+}
