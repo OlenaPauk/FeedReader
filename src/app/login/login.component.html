@@ -1,7 +1,7 @@
-<form [formGroup]="myForm" novalidate (ngSubmit)="login()">
+<!-- <form [formGroup]="myForm">
     <div class="form-group">
         <label for="userName">User name</label>
-        <input type="text" class="form-control" ([ngModel])="userName" name="userName" formControlName="userName" id="userName"/>
+        <input type="text" class="form-control" autocomplete="off" ([ngModel])="userName" name="userName" formControlName="userName" id="userName"/>
         <div class="alert alert-danger"
             *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
             Incorrect user name
@@ -10,7 +10,7 @@
 
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" name="password" formControlName="password" id="password"/>
+        <input type="password" class="form-control" ([ngModel])="password" name="password" formControlName="password" id="password"/>
         <div class="alert alert-danger"
             *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
             Incorrect password
@@ -23,13 +23,13 @@
             Log in
         </button>
     </div>
-</form>
-<!-- 
-<form action="">
+</form> -->
+
+ <form action="">
 
     <label for="userName">User name</label>
     <input type="text" class="form-input"  ([ngModel])="userName" autocomplete="off"  name="userName" id="userName" />
     <label for="password">Password</label>
-    <input type="text" class="form-input" name="password" id="password" />
-    <button  [disabled]="loginFlag">Log in</button>
-</form> -->
+    <input type="text" class="form-input" ([ngModel])="password"  name="password" id="password" />
+    <button (click)="login()">Log in</button>
+</form>

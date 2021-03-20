@@ -26,4 +26,7 @@ export class UsersService {
     },
   ];
   constructor() { }
+  loginUser(userName: string, password: string): IUser | undefined {
+    return this.users.find(user => (user.userName === userName && user.password === password));
+  }
 }
